@@ -1,22 +1,38 @@
 import { useState } from 'react'
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { PlantsPage } from './PlantsPage'
 import { UsersPage } from './UsersPage'
-
 import './App.css'
 
+const router = createBrowserRouter([
+  {
+    element: (
+      <div>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <PlantsPage />
+      },
+      {
+        path: "/users",
+        element: <UsersPage />
+      }
+    ]
+  }
+])
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <Header />
-      <PlantsPage />
-      <UsersPage />
-      <Footer />
-    </div>
-  )
+  <RouterProvider router={router} />
+  );
 }
 
 export default App

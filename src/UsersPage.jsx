@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { UsersIndex } from "./UsersIndex";
+import { UsersNew } from "./UsersNew";
 
 export function UsersPage () {
   const [users, setUsers] = useState([]);
@@ -15,6 +16,7 @@ console.log(users)
   return (
   <div>
     <UsersIndex users={users} />
+    <UsersNew />
   </div>
   )
 }
