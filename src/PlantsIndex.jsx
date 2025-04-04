@@ -7,8 +7,8 @@ export function PlantsIndex({ plants }) {
          <div key={plant.id}>
            <h2>{plant.name}</h2>
            <p>{plant.description}</p>
-           <p>{plant.days_to_water}</p>
-           <p>{plant.amount_of_sun}</p>
+           <p>Water every {plant.days_to_water} days</p>
+           <p>sunlight needed: {plant.amount_of_sun}%</p>
          </div>
        ))}
     </div>

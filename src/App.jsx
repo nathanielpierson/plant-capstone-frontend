@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { PlantsPage } from './PlantsPage'
+import { UsersPage } from './UsersPage'
 
 import './App.css'
 
@@ -12,6 +13,7 @@ function App() {
     <div>
       <Header />
       <PlantsPage />
+      <UsersPage />
       <Footer />
     </div>
   )
