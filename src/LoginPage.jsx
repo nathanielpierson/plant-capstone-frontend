@@ -17,16 +17,28 @@ export function LoginPage() {
       .post("http://localhost:3000/sessions.json", params)
       .then((response) => {
         console.log(response.data);
+        console.log(params);
         axios.defaults.headers.common["Authorization"] =
           "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader(
+          "Access-Control-Allow-Methods",
+          "GET,HEAD,OPTIONS,POST,PUT"
+        );
+        response.setHeader(
+          "Access-Control-Allow-Headers",
+          "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+        );
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/plants"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response);
         setErrors(["Invalid email or password"]);
       });
+    console.log(params);
   };
 
   return (
