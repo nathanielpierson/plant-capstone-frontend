@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
+import { SchedulesShow } from "./SchedulesShow";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 export function PlantsPage() {
@@ -12,13 +13,17 @@ export function PlantsPage() {
     });
   };
   useEffect(handleIndex, []);
+  const handleShow = (plant) => {
+    console.log("handleShow", plant);
+  };
   console.log(plants);
   var x = 1;
   const isAuthenticated = useIsAuthenticated();
-  if (isAuthenticated == true) {
+  if (localStorage.jwt) {
     return (
       <div>
         <PlantsIndex plants={plants} />
+        <SchedulesShow plants={plants} onShow={handleShow} />
       </div>
     );
   } else {

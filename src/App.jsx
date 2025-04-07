@@ -7,6 +7,7 @@ import { UsersPage } from "./UsersPage";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
+import { SchedulesPage } from "./SchedulesPage";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <UsersPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/schedules",
+        element: <SchedulesPage />,
       },
     ],
   },

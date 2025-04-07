@@ -41,21 +41,26 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
+                    <a className="dropdown-item" href="users">
+                      Users
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
+                    <a className="dropdown-item" href="/plants">
+                      Plants
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-divider"></a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
+                    <a className="dropdown-item" href="/login">
+                      Log in
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/schedules">
+                      your plant schedule
                     </a>
                   </li>
                 </ul>
