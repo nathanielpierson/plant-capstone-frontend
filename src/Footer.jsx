@@ -1,5 +1,9 @@
-export function Footer () {
+export function Footer() {
   return (
-<p>the footer will go here</p>
-  )
+    <div>
+      <br></br>
+      <br></br>
+      <p>copyright Nathaniel Plantson 2025</p>;
+    </div>
+  );
 }
