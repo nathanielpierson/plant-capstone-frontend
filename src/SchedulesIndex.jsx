@@ -4,7 +4,7 @@ export function SchedulesIndex({ schedules }) {
       <h1>all schedules</h1>
       {schedules.map((schedule) => (
         <div key={schedule.id}>
-          <p>belongs to user {schedule.user_id}</p>
+          <p>belongs to user {schedule.user.name}</p>
         </div>
       ))}
     </div>

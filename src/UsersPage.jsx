@@ -13,12 +13,12 @@ export function UsersPage() {
     });
   };
   useEffect(handleIndex, []);
+  console.log("users in UsersPage");
   console.log(users);
   return (
     <div>
       <UsersIndex users={users} />
       <UsersNew />
-      <SchedulesShow users={users} />
     </div>
   );
 }
