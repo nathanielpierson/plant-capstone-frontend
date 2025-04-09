@@ -1,5 +1,6 @@
 import { SchedulesShow } from "./SchedulesShow";
 import { SchedulesIndex } from "./SchedulesIndex";
+import { SchedulesCreate } from "./SchedulesCreate";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -22,11 +23,19 @@ export function SchedulesPage() {
     });
   };
   useEffect(handleUsersIndex, []);
-
-  return (
-    <div>
-      <SchedulesIndex schedules={schedules} />,
-      <SchedulesShow users={users} />
-    </div>
-  );
+  var admin = false;
+  if (admin) {
+    return (
+      <div>
+        <SchedulesIndex schedules={schedules} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <SchedulesShow users={users} />
+        <SchedulesCreate />
+      </div>
+    );
+  }
 }
