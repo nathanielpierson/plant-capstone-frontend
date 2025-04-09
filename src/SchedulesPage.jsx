@@ -28,12 +28,13 @@ export function SchedulesPage() {
     return (
       <div>
         <SchedulesIndex schedules={schedules} />
+        <SchedulesCreate />
       </div>
     );
   } else {
     return (
       <div>
-        <SchedulesShow users={users} />
+        <SchedulesShow schedules={schedules} />
         <SchedulesCreate />
       </div>
     );
