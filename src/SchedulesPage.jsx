@@ -42,6 +42,13 @@ export function SchedulesPage() {
       });
   };
 
+  const handleDestroy = (schedule) => {
+    axios.delete(`/schedules/${schedule.id}.json`).then(() => {
+      setSchedules(schedules.filter((p) => p.id !== schedule.id));
+      setIsSchedulesShowVisible(false);
+    });
+  };
+
   var admin = false;
   if (admin) {
     return (
@@ -54,7 +61,11 @@ export function SchedulesPage() {
     return (
       <div>
         <SchedulesShow schedules={schedules} onUpdate={handleUpdate} />
-        <SchedulesCreate onCreate={handleCreate} onUpdate={handleUpdate} />
+        <SchedulesCreate
+          onCreate={handleCreate}
+          onUpdate={handleUpdate}
+          onDestroy={handleDestroy}
+        />
       </div>
     );
   }

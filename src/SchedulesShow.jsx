@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function SchedulesShow({ schedules, onUpdate }) {
+export function SchedulesShow({ schedules, onUpdate, onDestroy }) {
   return (
     <div>
       <h1>all schedules</h1>
@@ -20,6 +20,8 @@ export function SchedulesShow({ schedules, onUpdate }) {
             {schedule.plant.days_to_water * 24 - schedule.time_changed} hours
           </p>
           <button onClick={() => onUpdate(schedule)}>water plant</button>
+          <br></br>
+          <button onClick={() => onDestroy(schedule)}>Destroy</button>
         </div>
       ))}
     </div>
