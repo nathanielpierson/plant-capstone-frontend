@@ -1,4 +1,6 @@
-export function SchedulesShow({ schedules }) {
+import axios from "axios";
+
+export function SchedulesShow({ schedules, onUpdate }) {
   return (
     <div>
       <h1>all schedules</h1>
@@ -12,10 +14,12 @@ export function SchedulesShow({ schedules }) {
             {schedule.plant.name} needs watered every{" "}
             {schedule.plant.days_to_water} days
           </p>
+          <p>Last watered {schedule.time_changed} hours ago</p>
           <p>
-            needs watered in: {schedule.plant.days_to_water} plus current
-            datetime minus {schedule.watering_start_date}
+            Needs watered in{" "}
+            {schedule.plant.days_to_water * 24 - schedule.time_changed} hours
           </p>
+          <button onClick={() => onUpdate(schedule)}>water plant</button>
         </div>
       ))}
     </div>
