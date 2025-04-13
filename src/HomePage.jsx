@@ -1,3 +1,12 @@
+import { Link } from "react-router-dom";
+
 export function HomePage() {
-  return <p>Welcome to plants app!</p>;
+  if (localStorage.jwt) {
+    return (
+      <div>
+        <p>Welcome to plants app!</p>
+        <Link to="/schedules"> Your plant schedules </Link>
+      </div>
+    );
+  }
 }

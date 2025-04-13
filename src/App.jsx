@@ -8,6 +8,7 @@ import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
 import { SchedulesPage } from "./SchedulesPage";
+import { HomePage } from "./HomePage";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       </AuthProvider>
     ),
     children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
       {
         path: "/plants",
         element: <PlantsPage />,
