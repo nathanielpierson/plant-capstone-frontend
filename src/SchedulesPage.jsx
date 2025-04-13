@@ -39,6 +39,7 @@ export function SchedulesPage() {
       .patch(`http://localhost:3000/schedules/${schedule.id}.json`)
       .then((response) => {
         console.log(response.data);
+        console.log(schedule.created_at);
       });
   };
 

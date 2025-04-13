@@ -8,5 +8,7 @@ export function HomePage() {
         <Link to="/schedules"> Your plant schedules </Link>
       </div>
     );
+  } else {
   }
+  return <p>please log in!</p>;
 }

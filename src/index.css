@@ -1,3 +1,7 @@
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+}
+.waterless {
+  color: #1d3d96;
+  font-style: italic;
+}

@@ -19,7 +19,13 @@ export function SchedulesShow({ schedules, onUpdate, onDestroy }) {
             Needs watered in{" "}
             {schedule.plant.days_to_water * 24 - schedule.time_changed} hours
           </p>
-          <button onClick={() => onUpdate(schedule)}>water plant</button>
+          <div>
+            {schedule.plant.days_to_water * 24 - schedule.time_changed > 0 ? (
+              <p className="waterless">come back later to water your plant!</p>
+            ) : (
+              <button onClick={() => onUpdate(schedule)}>water plant</button>
+            )}
+          </div>
           <br></br>
           <button onClick={() => onDestroy(schedule)}>Destroy</button>
         </div>
