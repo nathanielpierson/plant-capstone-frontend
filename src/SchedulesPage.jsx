@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 export function SchedulesPage() {
   const [schedules, setSchedules] = useState([]);
   const [users, setUsers] = useState([]);
-  const [currentSchedule, setCurrentSchedule] = useState([]);
 
   const handleIndex = () => {
     axios.get("http://localhost:3000/schedules.json").then((response) => {
@@ -23,6 +22,33 @@ export function SchedulesPage() {
     });
   };
   useEffect(handleUsersIndex, []);
+
+  const handleCreate = (params, successCallback) => {
+    console.log("schedulesPage handleCreate");
+    axios
+      .post("http://localhost:3000/schedules.json", params)
+      .then((response) => {
+        setSchedules([...schedules, response.data]);
+        successCallback;
+        console.log("create handled");
+      });
+  };
+
+  const handleUpdate = (schedule) => {
+    axios
+      .patch(`http://localhost:3000/schedules/${schedule.id}.json`)
+      .then((response) => {
+        console.log(response.data);
+      });
+  };
+
+  const handleDestroy = (schedule) => {
+    axios.delete(`/schedules/${schedule.id}.json`).then(() => {
+      setSchedules(schedules.filter((p) => p.id !== schedule.id));
+      setIsSchedulesShowVisible(false);
+    });
+  };
+
   var admin = false;
   if (admin) {
     return (
@@ -34,8 +60,12 @@ export function SchedulesPage() {
   } else {
     return (
       <div>
-        <SchedulesShow schedules={schedules} />
-        <SchedulesCreate />
+        <SchedulesShow schedules={schedules} onUpdate={handleUpdate} />
+        <SchedulesCreate
+          onCreate={handleCreate}
+          onUpdate={handleUpdate}
+          onDestroy={handleDestroy}
+        />
       </div>
     );
   }
