@@ -38,6 +38,11 @@ export function SchedulesCreate({ onCreate, onUpdate }) {
         </div>
         <button type="submit">Create schedule</button>
       </form>
+      <h3>
+        <a href="/plants" style={{ "--bs-link-opacity": ".4" }}>
+          more plant details
+        </a>
+      </h3>
     </div>
   );
 }
