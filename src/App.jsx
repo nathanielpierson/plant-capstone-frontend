@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import AuthProvider from "react-auth-kit";
 import createStore from "react-auth-kit/createStore";
+import cors from "cors";
 
 const store = createStore({
   authName: "_auth",

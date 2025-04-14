@@ -34,18 +34,20 @@ export function SchedulesPage() {
       });
   };
 
-  const handleUpdate = (schedule) => {
-    axios
-      .patch(`http://localhost:3000/schedules/${schedule.id}.json`)
-      .then((response) => {
-        console.log(response.data);
-        console.log(schedule.created_at);
-      });
+  const handleUpdate = () => {
+    console.log("Yo it's me, N E P");
+    axios.put(`http://localhost:3000/schedules.json`);
+    console.log("handleUpdate run");
+  };
+
+  const handleWatered = (schedule) => {
+    axios.put(`http://localhost:3000/schedules/${schedule.id}/water.json`);
+    console.log(schedule.id);
+    console.log("handleWatered run");
   };
 
   const handleDestroy = (schedule) => {
     axios.delete(`/schedules/${schedule.id}.json`).then(() => {
-      setSchedules(schedules.filter((p) => p.id !== schedule.id));
       setIsSchedulesShowVisible(false);
     });
   };
@@ -61,10 +63,14 @@ export function SchedulesPage() {
   } else {
     return (
       <div>
-        <SchedulesShow schedules={schedules} onUpdate={handleUpdate} />
+        <SchedulesShow
+          schedules={schedules}
+          onWatered={handleWatered}
+          onUpdate={handleUpdate}
+        />
         <SchedulesCreate
           onCreate={handleCreate}
-          onUpdate={handleUpdate}
+          onWatered={handleWatered}
           onDestroy={handleDestroy}
         />
       </div>

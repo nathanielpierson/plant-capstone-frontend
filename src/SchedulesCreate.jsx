@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function SchedulesCreate({ onCreate, onUpdate }) {
+export function SchedulesCreate({ onCreate }) {
   const handleSubmit = (event) => {
     console.log("handleSubmit");
     event.preventDefault();
