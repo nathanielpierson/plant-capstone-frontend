@@ -39,18 +39,21 @@ export function SchedulesPage() {
     console.log("handleUpdate run");
   };
 
+  //button to water plants is pressed, this code is run. No data input from user, the put action on the backend is what changes the data.
   const handleWatered = (schedule) => {
     axios.put(`http://localhost:3000/schedules/${schedule.id}/water.json`);
-    console.log(schedule.id);
     console.log("handleWatered run");
   };
 
   const handleDestroy = (schedule) => {
-    axios.delete(`/schedules/${schedule.id}.json`).then(() => {
-      setIsSchedulesShowVisible(false);
+    axios.delete(`http://localhost:3000/schedules/${schedule.id}.json`).then(() => {
+    setSchedules(schedules.filter((p) => p.id !== schedules.id));
+      // setIsSchedulesShowVisible(false);
+      console.log("handleDestroy run");
     });
   };
 
+//this admin stuff is outdated code, but it may be helpful later.
   var admin = false;
   if (admin) {
     return (
@@ -66,11 +69,12 @@ export function SchedulesPage() {
           schedules={schedules}
           onWatered={handleWatered}
           onUpdate={handleUpdate}
+          onDestroy={handleDestroy}
         />
         <SchedulesCreate
+          onIndex={handleIndex}
           onCreate={handleCreate}
           onWatered={handleWatered}
-          onDestroy={handleDestroy}
         />
       </div>
     );

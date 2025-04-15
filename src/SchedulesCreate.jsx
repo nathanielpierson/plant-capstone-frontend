@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export function SchedulesCreate({ onCreate }) {
+  const [user, setUser] = useState([]);
+  const userIndex = () => {
+    axios.get ("http://localhost:3000/users/id.json").then((response) => {
+      setUser(response.data);
+    });
+  }
   const handleSubmit = (event) => {
     console.log("handleSubmit");
     event.preventDefault();
@@ -17,6 +23,7 @@ export function SchedulesCreate({ onCreate }) {
       console.log(response.data);
     });
   };
+  useEffect(userIndex, []);
   useEffect(handleIndex, []);
 
   return (
@@ -24,7 +31,7 @@ export function SchedulesCreate({ onCreate }) {
       <p>create a new plant schedule here!</p>
       <form onSubmit={handleSubmit}>
         <div>
-          User: <input name="user_id" type="integer" />
+          User: <input type="hidden" id="user_id" name="user_id" value={user.id} />
         </div>
         <div>
           Choose plant
