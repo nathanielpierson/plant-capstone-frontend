@@ -35,7 +35,6 @@ export function SchedulesPage() {
   };
 
   const handleUpdate = () => {
-    console.log("Yo it's me, N E P");
     axios.put(`http://localhost:3000/schedules.json`);
     console.log("handleUpdate run");
   };

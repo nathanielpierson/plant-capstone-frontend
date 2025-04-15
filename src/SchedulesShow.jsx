@@ -9,14 +9,18 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
       {schedules.map((schedule) => (
         <div key={schedule.id}>
           <img src={schedule.plant.image_url} height="200" width="300" />
-          <p>
-            plant is {schedule.id} {schedule.plant.name} belongs to user{" "}
-            {schedule.user.name}
-          </p>
-          <h3>started watering at {schedule.created_at}</h3>
+          <h4>
+            {schedule.user.name}'s {schedule.plant.name}
+          </h4>
+          <p>planted on {new Date(schedule.created_at).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})}
+</p>
           <div className="progress">
             <div
-              className="progress-bar"
+              className="progress-bar progress-bar-striped progress-bar-animated bg-success"
               role="progressbar"
               style={{width: `${Math.round((schedule.growth_status / schedule.plant.growth_req) * 100)}%`}}
               aria-valuenow={`${Math.round((schedule.growth_status / schedule.plant.growth_req) * 100)}%`}
@@ -28,15 +32,10 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
             {schedule.plant.name} needs watered every{" "}
             {schedule.plant.days_to_water} days
           </p>
-          <p>Last watered {schedule.time_changed} hours ago</p>
+          <p>Last watered {schedule.time_changed} {schedule.time_changed > 1 ? "hours" : "hour"} ago</p>
           <p>
             Needs watered in{" "}
             {schedule.plant.days_to_water * 24 - schedule.time_changed} hours
-          </p>
-          <p>
-            {Math.round(
-              (schedule.growth_status / schedule.plant.growth_req) * 100
-            )}
           </p>
           <div>
             {schedule.plant.days_to_water * 24 - schedule.time_changed > 0 ? (
