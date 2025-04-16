@@ -1,7 +1,12 @@
 html {
   scroll-behavior: smooth;
 }
+
 .waterless {
   color: #1d3d96;
   font-style: italic;
+}
+
+main {
+  background-color: rgba(191, 211, 191, 0.904);
 }

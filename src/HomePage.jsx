@@ -4,7 +4,7 @@ export function HomePage() {
   if (localStorage.jwt) {
     return (
       <div>
-        <p>Welcome to plants app!</p>
+        <h1>Welcome to plants app!</h1>
         <Link to="/schedules"> Your plant schedules </Link>
       </div>
     );

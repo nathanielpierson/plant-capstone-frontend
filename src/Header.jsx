@@ -4,7 +4,7 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            Saladbar
           </a>
           <button
             className="navbar-toggler"
@@ -25,7 +25,7 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="https://cdn.triforcewiki.com/thumb/d/d5/Link_TLoZ_artwork.png/1200px-Link_TLoZ_artwork.png">
                   Link
                 </a>
               </li>
