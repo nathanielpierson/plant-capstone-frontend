@@ -1,10 +1,22 @@
+import {useState, useEffect} from "react";
+import axios from "axios";
+
 export function Header() {
+  const [userImage, setUserImage] = useState("");
+  const findUserImage = () => {
+    axios.get("http://localhost:3000/users/current.json").then((response) => {
+    setUserImage(response.data.image_url)
+    });
+  };
+  useEffect(findUserImage, []);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
+      <img src={userImage} width="40" height="40"/>
           <a className="navbar-brand" href="#">
-            Saladbar
+            Saladbar: The Plant-growing App
           </a>
           <button
             className="navbar-toggler"

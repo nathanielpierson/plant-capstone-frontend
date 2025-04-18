@@ -8,6 +8,7 @@ import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
 import { SchedulesPage } from "./SchedulesPage";
+import { AdminSchedulesPage } from "./AdminSchedulesPage";
 import { HomePage } from "./HomePage";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         path: "/schedules",
         element: <SchedulesPage />,
       },
+      {
+        path: "/adminschedules",
+        element: <AdminSchedulesPage />
+      }
     ],
   },
 ]);
