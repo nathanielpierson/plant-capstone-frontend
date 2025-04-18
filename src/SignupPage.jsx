@@ -31,20 +31,23 @@ export function SignupPage() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
+          Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="name" type="text" />
         </div>
         <div>
-          Email: <input name="email" type="email" />
+          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="email" type="email" />
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="password" type="password" />
         </div>
         <div>
-          Password confirmation:{" "}
+          Confirm password:{" "}
           <input name="password_confirmation" type="password" />
         </div>
         <button type="submit">Signup</button>
       </form>
-    </div>
+      </div>
   );
 }

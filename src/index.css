@@ -10,3 +10,8 @@ html {
 main {
   background-color: rgba(191, 211, 191, 0.904);
 }
+
+div {
+  color: rgb(6, 78, 15);
+  text-align: left;
+}

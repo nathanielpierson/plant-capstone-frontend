@@ -43,6 +43,7 @@ export function LoginPage() {
 
   return (
     <div id="login">
+      <br></br>
       <h1>Login</h1>
       <ul>
         {errors.map((error) => (
@@ -51,10 +52,12 @@ export function LoginPage() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Email: <input name="email" type="email" />
+          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="email" type="email" />
         </div>
         <div>
-          Password: <input name="password" type="password" />
+          Password: &nbsp;&nbsp;
+          <input name="password" type="password" />
         </div>
         <button type="submit">Login</button>
       </form>

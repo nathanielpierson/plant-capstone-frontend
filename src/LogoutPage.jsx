@@ -9,8 +9,11 @@ export function LogoutPage() {
   };
 
   return (
+    <div>
+    <br></br>
     <a href="#" onClick={handleClick}>
       Logout
     </a>
+    </div>
   );
 }
