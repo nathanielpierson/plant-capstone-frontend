@@ -28,7 +28,7 @@ export function SchedulesCreate({ onCreate }) {
 
   return (
     <div>
-      <p>create a new plant schedule here!</p>
+      <p className="lead">create a new plant schedule here!</p>
       <form onSubmit={handleSubmit}>
         <div>
           User: <input type="hidden" id="user_id" name="user_id" value={user.id} />

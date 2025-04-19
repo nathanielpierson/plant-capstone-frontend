@@ -8,7 +8,7 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
       <h1>all of your schedules</h1>
       {schedules.map((schedule) => (
         <div key={schedule.id}>
-          <img src={schedule.plant.image_url} height="200" width="300" />
+          <img src={schedule.plant.image_url} height="220" width="330" />
           <h4>
             {schedule.user.name}'s {schedule.plant.name}
           </h4>
@@ -18,6 +18,7 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
   day: 'numeric',
 })}
 </p>
+        <div className="schedule">
           <div className="progress">
             <div
               className="progress-bar progress-bar-striped progress-bar-animated bg-success"
@@ -26,8 +27,9 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
               aria-valuenow={`${Math.round((schedule.growth_status / schedule.plant.growth_req) * 100)}%`}
               aria-valuemin="0"
               aria-valuemax="100"
-            >Growth Status: stage {schedule.growth_status} out of {schedule.plant.growth_req}</div>
+              >Growth Status: stage {schedule.growth_status} out of {schedule.plant.growth_req}</div>
           </div>
+              </div>
           <p>
             {schedule.plant.name} needs watered every{" "}
             {schedule.plant.days_to_water} days
