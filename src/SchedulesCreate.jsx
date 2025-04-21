@@ -20,7 +20,6 @@ export function SchedulesCreate({ onCreate }) {
   const handleIndex = () => {
     axios.get("http://localhost:3000/plants.json").then((response) => {
       setPlants(response.data);
-      console.log(response.data);
     });
   };
   useEffect(userIndex, []);
