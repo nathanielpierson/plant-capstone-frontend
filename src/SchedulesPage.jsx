@@ -1,5 +1,4 @@
 import { SchedulesShow } from "./SchedulesShow";
-import { SchedulesIndex } from "./SchedulesIndex";
 import { SchedulesCreate } from "./SchedulesCreate";
 import axios from "axios";
 import { useState, useEffect } from "react";
