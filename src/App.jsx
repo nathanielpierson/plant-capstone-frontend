@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { PlantsPage } from "./PlantsPage";
 import { UsersPage } from "./UsersPage";
+import { UsersShow } from "./UsersShow";
 import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
@@ -60,7 +61,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminschedules",
-        element: <AdminSchedulesPage />
+        element: <AdminSchedulesPage />,
+      },
+      {
+        path: "/profile",
+        element: <UsersShow />
       }
     ],
   },

@@ -43,11 +43,12 @@ export function SchedulesPage() {
   const handleWatered = (schedule) => {
     axios.put(`http://localhost:3000/schedules/${schedule.id}/water.json`);
     console.log("handleWatered run");
+    handleIndex();
   };
 
   const handleDestroy = (schedule) => {
     axios.delete(`http://localhost:3000/schedules/${schedule.id}.json`).then(() => {
-    setSchedules(schedules.filter((p) => p.id !== schedules.id));
+    setSchedules(schedules.filter((p) => p.id !== schedule.id));
       // setIsSchedulesShowVisible(false);
       console.log("handleDestroy run");
     });
