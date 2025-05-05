@@ -11,6 +11,7 @@ export function SchedulesPage() {
   const handleIndex = () => {
     axios.get("http://localhost:3000/schedules.json").then((response) => {
       console.log(response.data);
+      console.log("index handled")
       setSchedules(response.data);
     });
   };
@@ -49,21 +50,9 @@ export function SchedulesPage() {
   const handleDestroy = (schedule) => {
     axios.delete(`http://localhost:3000/schedules/${schedule.id}.json`).then(() => {
     setSchedules(schedules.filter((p) => p.id !== schedule.id));
-      // setIsSchedulesShowVisible(false);
       console.log("handleDestroy run");
     });
   };
-
-//this admin stuff is outdated code, but it may be helpful later.
-  var admin = false;
-  if (admin) {
-    return (
-      <div>
-        <SchedulesIndex schedules={schedules} />
-        <SchedulesCreate />
-      </div>
-    );
-  } else {
     return (
       <div>
         <SchedulesShow
@@ -80,4 +69,3 @@ export function SchedulesPage() {
       </div>
     );
   }
-}
