@@ -15,8 +15,6 @@ export function PlantsPage() {
   const handleShow = (plant) => {
     console.log("handleShow", plant);
   };
-  console.log(plants);
-  var x = 1;
   if (localStorage.jwt) {
     return (
       <div>

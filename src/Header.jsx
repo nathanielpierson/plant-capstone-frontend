@@ -3,9 +3,11 @@ import axios from "axios";
 
 export function Header() {
   const [userImage, setUserImage] = useState("");
+  const [userName, setUserName] = useState("");
   const findUserImage = () => {
     axios.get("http://localhost:3000/users/current.json").then((response) => {
     setUserImage(response.data.image_url)
+    setUserName(response.data.name)
     });
   };
   useEffect(findUserImage, []);
@@ -53,8 +55,8 @@ export function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="users">
-                      Users
+                    <a className="dropdown-item" href="profile">
+                      Your Profile
                     </a>
                   </li>
                   <li>
@@ -97,6 +99,9 @@ export function Header() {
           </div>
         </div>
       </nav>
+      <p>
+        Hello, {userName}!
+      </p>
     </div>
   );
 }
