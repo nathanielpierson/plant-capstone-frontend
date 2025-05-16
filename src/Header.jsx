@@ -16,9 +16,18 @@ export function Header() {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-      <img src={userImage} width="40" height="40"/>
+        <a href="/profile">
+          <img
+            src={userImage}
+            width="40"
+            height="40"
+            alt="User Profile"
+            className="rounded-circle"
+            style={{ cursor: "pointer" }}
+          />
+        </a>
           <a className="navbar-brand" href="#">
-            Saladbar: The Plant-growing App
+          &nbsp; Saladbar: The Plant Care App
           </a>
           <button
             className="navbar-toggler"
@@ -39,8 +48,8 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="https://cdn.triforcewiki.com/thumb/d/d5/Link_TLoZ_artwork.png/1200px-Link_TLoZ_artwork.png">
-                  Link
+                <a className="nav-link active" aria-current="page" href="/schedules">
+                  Your Plant Schedule
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -59,30 +68,28 @@ export function Header() {
                       Your Profile
                     </a>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="/plants">
-                      Plants
-                    </a>
-                  </li>
+                <li className="nav-item">
+                  <a className="dropdown-item" href="https://cdn.triforcewiki.com/thumb/d/d5/Link_TLoZ_artwork.png/1200px-Link_TLoZ_artwork.png">
+                  Link
+                  </a>
                   <li>
                     <a className="dropdown-divider"></a>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="/login">
-                      Log in
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/schedules">
-                      your plant schedule
-                    </a>
-                  </li>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/plants">
+                    Plants
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-divider"></a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="/login">
+                    Log in
+                  </a>
+                </li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
               </li>
             </ul>
             <form className="d-flex" role="search">
