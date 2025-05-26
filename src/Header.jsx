@@ -72,9 +72,9 @@ export function Header() {
                   <a className="dropdown-item" href="https://cdn.triforcewiki.com/thumb/d/d5/Link_TLoZ_artwork.png/1200px-Link_TLoZ_artwork.png">
                   Link
                   </a>
-                  <li>
-                    <a className="dropdown-divider"></a>
-                  </li>
+                </li>
+                <li>
+                  <a className="dropdown-divider"></a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="/plants">
@@ -107,7 +107,7 @@ export function Header() {
         </div>
       </nav>
       <p>
-        Hello, {userName}!
+        {localStorage.jwt ? "Hello " + userName + "!" : "Hello user! Either log in, or create an account to see your plants!"}
       </p>
     </div>
   );

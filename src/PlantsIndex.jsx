@@ -1,9 +1,10 @@
 export function PlantsIndex({ plants }) {
   console.log(plants);
+  const sortedPlants = plants.toSorted((a, b) => a.id - b.id);
   return (
     <div>
       <h1>All plants ({plants.length} total)</h1>
-      {plants.map((plant) => (
+      {sortedPlants.map((plant) => (
         <div key={plant.id}>
           <h2>{plant.name}</h2>
           {console.log("Image URL:", plant.image_url)}

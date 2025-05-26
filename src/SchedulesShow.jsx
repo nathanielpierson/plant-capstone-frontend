@@ -3,21 +3,22 @@ import { useState, useEffect } from "react";
 
 export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
   useEffect(onUpdate, []);
+  const sortedSchedules = schedules.toSorted((a, b) => a.id - b.id);
   return (
     <div>
       <h1>all of your schedules</h1>
-      {schedules.map((schedule) => (
+      {sortedSchedules.map((schedule) => (
         <div key={schedule.id}>
           <img src={schedule.plant.image_url} height="220" width="330" />
           <h4>
             {schedule.user.name}'s {schedule.plant.name}
           </h4>
           <p>planted on {new Date(schedule.created_at).toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-})}
-</p>
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+          </p>
         <div className="schedule">
           <div className="progress">
             <div
