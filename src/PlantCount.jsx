@@ -22,11 +22,11 @@ export function PlantCount() {
   return (
     <div>
       <p>
-        {userName}. your plant cooouuuuuuuunt :3
+        {userName}. Your plants will show up here; both how many you currently have growing, and how many you have already grown
       </p>
       {plantCounts.map((plant_count) => (
         <div key={plant_count.id}>
-          <p>{plant_count.plant.name} uhh {plant_count.count_growing} of em growowing and erm {plant_count.count_finished} completed thanks</p>
+          <p>{plant_count.plant.name} {plant_count.count_growing} growing and {plant_count.count_finished} completed</p>
         </div>
       ))}
     </div>
