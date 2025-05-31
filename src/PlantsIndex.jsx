@@ -7,7 +7,6 @@ export function PlantsIndex({ plants }) {
       {sortedPlants.map((plant) => (
         <div key={plant.id}>
           <h2>{plant.name}</h2>
-          {console.log("Image URL:", plant.image_url)}
           <img src={plant.image_url || "https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png"}
           alt={plant.name}
           height="240"
