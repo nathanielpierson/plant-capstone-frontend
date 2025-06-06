@@ -1,4 +1,4 @@
-import api from '../lib/axios';
+import api from './axios';
 import { useState, useEffect } from "react";
 
 export function PlantCount() {
