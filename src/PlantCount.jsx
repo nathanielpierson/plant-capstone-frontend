@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 export function PlantCount() {
   const [plantCounts, setPlantCounts] = useState([]);
   const handleIndex = () => {
-    api.get("http://localhost:3000/plant_counts.json").then((response) => {
-      setPlantCounts(response.data)
-      console.log(response.data)
+    axios.get("http://localhost:3000/plant_counts.json").then((response) => {
+      setPlantCounts(response.data);
+      console.log(response.data);
     })
   };
   useEffect(handleIndex, []);
@@ -21,12 +21,10 @@ export function PlantCount() {
   useEffect(findUserImage, []);
   return (
     <div>
-      <p>
-        {userName}. your plant cooouuuuuuuunt :3
-      </p>
+        {userName}. Your plants will show up here; both how many you currently have growing, and how many you have already grown
       {plantCounts.map((plant_count) => (
         <div key={plant_count.id}>
-          <p>{plant_count.plant.name} uhh {plant_count.count_growing} of em growowing and erm {plant_count.count_finished} completed thanks</p>
+          <p>{plant_count.plant.name} {plant_count.count_growing} growing and {plant_count.count_finished} completed</p>
         </div>
       ))}
     </div>

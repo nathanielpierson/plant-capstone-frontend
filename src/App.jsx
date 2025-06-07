@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -17,6 +18,8 @@ import "./App.css";
 import AuthProvider from "react-auth-kit";
 import createStore from "react-auth-kit/createStore";
 axios.defaults.baseURL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "https://plant-rebuild-api.onrender.com";
+
+axios.defaults.baseURL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "<your-backend-url>";
 
 const store = createStore({
   authName: "_auth",

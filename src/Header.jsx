@@ -17,6 +17,7 @@ export function Header() {
       I have no idea how this pineapple got here
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
+      { localStorage.jwt ? 
         <a href="/profile">
           <img
             src={userImage}
@@ -25,8 +26,12 @@ export function Header() {
             alt="User Profile"
             className="rounded-circle"
             style={{ cursor: "pointer" }}
-          />
+            />
+        </a> : <a>
+          h
+          <img src="https://www.dole.com/sites/default/files/styles/1024w768h-80/public/media/2025-01/pineaple.png?itok=6P-hraWo-o1Nbx-ho" />
         </a>
+        }
           <a className="navbar-brand" href="#">
           &nbsp; Saladbar: The Plant Care App
           </a>
