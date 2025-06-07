@@ -1,13 +1,13 @@
-import api from './axios';
 import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
 import { SchedulesShow } from "./SchedulesShow";
+import axios from "axios";
 
 export function PlantsPage() {
   const [plants, setPlants] = useState([]);
 
   const handleIndex = () => {
-    api.get("https://plant-rebuild-api.onrender.com/plants.json").then((response) => {
+    axios.get("http://localhost:3000/plants.json").then((response) => {
       setPlants(response.data);
     });
   };

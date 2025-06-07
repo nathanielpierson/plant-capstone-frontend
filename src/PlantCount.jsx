@@ -1,5 +1,5 @@
-import api from './axios';
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export function PlantCount() {
   const [plantCounts, setPlantCounts] = useState([]);
@@ -13,7 +13,7 @@ export function PlantCount() {
   const [userImage, setUserImage] = useState("");
   const [userName, setUserName] = useState("");
   const findUserImage = () => {
-    api.get("http://localhost:3000/users/current.json").then((response) => {
+    axios.get("http://localhost:3000/users/current.json").then((response) => {
     setUserImage(response.data.image_url)
     setUserName(response.data.name)
     });
