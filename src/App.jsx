@@ -18,6 +18,7 @@ import "./App.css";
 import AuthProvider from "react-auth-kit";
 import createStore from "react-auth-kit/createStore";
 axios.defaults.baseURL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "https://plant-rebuild-api.onrender.com";
+axios.defaults.withCredentials = true;
 
 const store = createStore({
   authName: "_auth",

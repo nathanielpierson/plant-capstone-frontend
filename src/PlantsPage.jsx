@@ -7,7 +7,7 @@ export function PlantsPage() {
   const [plants, setPlants] = useState([]);
 
   const handleIndex = () => {
-    axios.get("http://localhost:3000/plants.json").then((response) => {
+    axios.get("/plants.json").then((response) => {
       setPlants(response.data);
     });
   };
