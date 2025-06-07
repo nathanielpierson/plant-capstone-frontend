@@ -29,7 +29,6 @@ export function Header() {
             />
         </a> : <a>
           h
-          <img src="https://www.dole.com/sites/default/files/styles/1024w768h-80/public/media/2025-01/pineaple.png?itok=6P-hraWo-o1Nbx-ho" />
         </a>
         }
           <a className="navbar-brand" href="#">
