@@ -14,6 +14,7 @@ export function Header() {
 
   return (
     <div>
+      I have no idea how this pineapple got here
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
         <a href="/profile">
