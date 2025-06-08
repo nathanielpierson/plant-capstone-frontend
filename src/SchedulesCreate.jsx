@@ -4,7 +4,7 @@ import axios from "axios";
 export function SchedulesCreate({ onCreate }) {
   const [user, setUser] = useState([]);
   const userIndex = () => {
-    axios.get ("http://localhost:3000/users/id.json").then((response) => {
+    axios.get ("/users/id.json").then((response) => {
       setUser(response.data);
     });
   }
@@ -18,7 +18,7 @@ export function SchedulesCreate({ onCreate }) {
   };
   const [plants, setPlants] = useState([]);
   const handleIndex = () => {
-    axios.get("http://localhost:3000/plants.json").then((response) => {
+    axios.get("/plants.json").then((response) => {
       setPlants(response.data);
     });
   };

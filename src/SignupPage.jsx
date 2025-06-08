@@ -9,7 +9,7 @@ export function SignupPage() {
     setErrors([]);
     const params = new FormData(event.target);
     axios
-      .post("http://localhost:3000/users.json", params)
+      .post("/users.json", params)
       .then((response) => {
         console.log(response.data);
         event.target.reset();

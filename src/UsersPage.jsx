@@ -8,7 +8,7 @@ export function UsersPage() {
   const [users, setUsers] = useState([]);
 
   const handleIndex = () => {
-    axios.get("http://localhost:3000/users.json").then((response) => {
+    axios.get("/users.json").then((response) => {
       setUsers(response.data);
     });
   };
