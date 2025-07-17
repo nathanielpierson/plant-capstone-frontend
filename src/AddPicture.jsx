@@ -1,12 +1,20 @@
-import axios from "axios"
-import { useState, useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
+import { ProfilePage } from "./ProfilePage";
 
 export function AddPicture() {
-const [imageLink, setImageLink] = useState();
-  const handleAddImage = () => {
-    axios.put("/users.json").then((response) => {
-      setImageLink(response.data)
-    })
-  }
-  useEffect(handleAddImage, []);
+  const [images, setImages] = useState([]);
+
+  const handleUpdate = (params, successCallback) => {
+    axios.put("/users/current.json", params).then((response) => {
+      setImages([...images, response.data]);
+      successCallback();
+    });
+  };
+
+  return (
+    <div>
+      <ProfilePage onUpdate={handleUpdate} />
+    </div>
+  );
 }
