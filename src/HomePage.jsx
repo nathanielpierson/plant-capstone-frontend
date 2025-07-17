@@ -5,7 +5,12 @@ export function HomePage() {
     return (
       <div>
         <h1>Welcome to &nbsp;
-        <img src="/images/Saladbar-logo-new.png" height="120" width="180" className="inline-block hover-opacity" alt="Plant App Logo"/>
+        <img src={`${process.env.PUBLIC_URL}/images/Saladbar-logo-new.png`}
+          height="120"
+          width="180"
+          className="inline-block hover-opacity"
+          alt="Plant App Logo"
+        />
         &nbsp;!</h1>
         <br></br>
         <Link to="/schedules"> Your plant schedules </Link>
