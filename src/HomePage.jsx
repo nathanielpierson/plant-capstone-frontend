@@ -5,7 +5,7 @@ export function HomePage() {
     return (
       <div>
         <h1>Welcome to &nbsp;
-        <img src={`${process.env.PUBLIC_URL}/images/Saladbar-logo-new.png`}
+        <img src={`images/Saladbar-logo-new.png`}
           height="120"
           width="180"
           className="inline-block hover-opacity"
@@ -20,3 +20,4 @@ export function HomePage() {
   }
   return <p>please log in!</p>;
 }
+
