@@ -2,9 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#carousel_p {
+  color: rgb(90, 196, 81);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
 
 main {
-  background-color: rgba(191, 211, 191, 0.904);
+  background-color: rgba(66, 236, 66, 0.904);
 }
 
 div {
