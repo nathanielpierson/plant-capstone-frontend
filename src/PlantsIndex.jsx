@@ -8,16 +8,14 @@ export function PlantsIndex({ plants }) {
   return (
     <div>
         <h1>All plants ({plants.length} total)</h1>
-      <Carousel>
+      <Carousel fade>
         {sortedPlants.map((plant) => (
-          <div key={plant.id}>
-            <CarouselItem> 
+            <CarouselItem key={plant.id}> 
             <img src={plant.image_url || "https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png"}
             alt={plant.name}
-            height="240"
-            width="360"
-            text={plant.name} />
-            <CarouselCaption>
+            height="480"
+            width="720"/>
+            <CarouselCaption id="carousel_p">
             <h2>{plant.name}</h2>
               <p>{plant.description}</p>
               <p>
@@ -41,7 +39,6 @@ export function PlantsIndex({ plants }) {
               </p>
             </CarouselCaption>
             </CarouselItem>
-          </div>
         ))}
       </Carousel>
     </div>
