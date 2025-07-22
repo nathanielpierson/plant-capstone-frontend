@@ -4,6 +4,7 @@ html {
 
 #carousel_p {
   color: rgb(90, 196, 81);
+  background-color: rgb(85, 85, 197);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
@@ -13,6 +14,7 @@ main {
 
 div {
   color: rgb(6, 78, 15);
+  background-color: rgb(240, 222, 222);
   text-align: left;
 }
 

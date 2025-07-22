@@ -8,7 +8,7 @@ export function PlantsIndex({ plants }) {
   return (
     <div>
         <h1>All plants ({plants.length} total)</h1>
-      <Carousel>
+      <Carousel fade>
         {sortedPlants.map((plant) => (
             <CarouselItem key={plant.id}> 
             <img src={plant.image_url || "https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png"}
