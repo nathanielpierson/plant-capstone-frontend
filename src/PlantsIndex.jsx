@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CarouselCaption, CarouselItem } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image';
 
 export function PlantsIndex({ plants }) {
   console.log(plants);
@@ -12,9 +13,11 @@ export function PlantsIndex({ plants }) {
         {sortedPlants.map((plant) => (
             <CarouselItem key={plant.id}> 
             <img src={plant.image_url || "https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png"}
+            // fluid
             alt={plant.name}
             height="480"
-            width="720"/>
+            width="720"
+            />
             <CarouselCaption id="carousel_p">
             <h2>{plant.name}</h2>
               <p>{plant.description}</p>

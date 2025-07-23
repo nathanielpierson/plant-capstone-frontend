@@ -5,7 +5,9 @@ html {
 #carousel_p {
   color: rgb(90, 196, 81);
   background-color: rgb(85, 85, 197);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0.8;
+  width: "4000";
 }
 
 main {
