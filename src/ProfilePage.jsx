@@ -24,15 +24,18 @@ export function ProfilePage({ onUpdate }) {
 
   return (
     <div>
-      {user ? (
-        <form onSubmit={request}>
-          <p>you are {user.name}</p>
-          image_url: <input defaultValue={user.image_url} name="image_url" type="text" />
-          <button type="submit">submit</button>
-        </form>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <div>
+        {user ? (
+          <form onSubmit={request}>
+            <p>you are {user.name}</p>
+            image_url: <input defaultValue={user.image_url} name="image_url" type="text" />
+            <button type="submit">submit</button>
+          </form>
+        ) : (
+          <div>Loading...</div>
+        )}
+      </div>
+      <PlantCount />
     </div>
   );
 }

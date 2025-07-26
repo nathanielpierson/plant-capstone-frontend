@@ -1,4 +1,3 @@
-import { useState } from "react";
 import axios from "axios";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Header } from "./Header";
@@ -10,7 +9,6 @@ import { SignupPage } from "./SignupPage";
 import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
 import { SchedulesPage } from "./SchedulesPage";
-import { AdminSchedulesPage } from "./AdminSchedulesPage";
 import { HomePage } from "./HomePage";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -62,10 +60,6 @@ const router = createBrowserRouter([
       {
         path: "/schedules",
         element: <SchedulesPage />,
-      },
-      {
-        path: "/adminschedules",
-        element: <AdminSchedulesPage />,
       },
       {
         path: "/profile",
