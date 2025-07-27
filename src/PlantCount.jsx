@@ -40,10 +40,10 @@ export function PlantCount() {
   };
   return (
     <div>
-      {userName}. Your plants will show up here; both how many you currently have growing, and how many you have already grown
+      {userName}, keep watering your plants to get more finished produce!
     {plantCounts.map((plant_count) => (
       <div key={plant_count.id}>
-        <p>{plant_count.plant.name} {plant_count.count_growing} growing and {plant_count.count_finished} completed</p>
+        <p>{plant_count.plant.name} {plant_count.count_growing} <img src="images/growing_sprite.png" width="30" height="30"/> and {plant_count.count_finished} <img src="images/finished_sprite.png" width="30" height="30" /></p>
     </div>
       ))}
       <div>

@@ -100,7 +100,7 @@ export function Header() {
         </div>
       </nav>
       <p>
-        {localStorage.jwt ? "Hello " + userName + "!" : "Hello user! Either log in, or create an account to see your plants!"}
+        {localStorage.jwt ? <p> Hello {userName}! </p> : <p> "Hello user! Either log in, or create an account to see your plants!" </p>}
       </p>
     </div>
   );

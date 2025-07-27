@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
-import { SchedulesShow } from "./SchedulesShow";
 import axios from "axios";
 
 export function PlantsPage() {
