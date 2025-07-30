@@ -28,7 +28,7 @@ export function PlantCount() {
     try {
       // Send whatever payload your endpoint expects. {} is fine if it doesn't need one.
       const res = await axios.put(
-        "http://localhost:3000/plant_counts/all",
+        "/plant_counts/all",
         {}
       );
       setData(res.data);
