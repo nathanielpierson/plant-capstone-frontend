@@ -13,8 +13,6 @@ export function UsersShow() {
   useEffect(handleIndex, [youPersonally]);
   return (
     <div>
-      <p>{youPersonally.name}</p>
-      <p>UsersShow</p>
       <ProfilePage onUpdate={handleUserUpdate}/>
     </div>
   )
