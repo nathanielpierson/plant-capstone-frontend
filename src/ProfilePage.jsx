@@ -1,5 +1,4 @@
 import { PlantCount } from "./PlantCount"
-import { AddPicture } from "./AddPicture";
 import { UsersUpdate } from "./UsersUpdate";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -13,19 +12,9 @@ export function ProfilePage({ onUpdate }) {
     });
   }, []);
 
-  const request = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const params = {
-      image_url: form.image_url.value
-    };
-    const successCallback = () => form.reset();
-    onUpdate(params, successCallback);
-  };
-
   return (
     <div>
-      <UsersUpdate />
+      <UsersUpdate onUpdate={onUpdate} />
       <PlantCount />
     </div>
   );

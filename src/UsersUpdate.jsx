@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function UsersUpdate() {
+export function UsersUpdate({onUpdate}) {
    const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -18,10 +18,11 @@ export function UsersUpdate() {
     };
     const successCallback = () => form.reset();
     onUpdate(params, successCallback);
+    event.target.reset();
+    window.location.href = "/profile";
   };
   return (
     <div>
-      <p>
       <div>
         {user ? (
           <form onSubmit={request}>
@@ -33,7 +34,6 @@ export function UsersUpdate() {
           <div>Loading...</div>
         )}
       </div>
-      </p>
     </div>
   )
 }

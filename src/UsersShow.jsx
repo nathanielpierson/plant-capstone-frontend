@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import {ProfilePage} from "./ProfilePage";
-import { AddPicture } from "./AddPicture";
+import { handleUserUpdate } from "./helpers/AddPicture";
 
 export function UsersShow() {
   const [youPersonally, setYouPersonally] = useState([])
@@ -10,12 +10,12 @@ export function UsersShow() {
       setYouPersonally(response.data);
     });
   };
-  useEffect(handleIndex, []);
+  useEffect(handleIndex, [youPersonally]);
   return (
     <div>
       <p>{youPersonally.name}</p>
       <p>UsersShow</p>
-      <AddPicture />
+      <ProfilePage onUpdate={handleUserUpdate}/>
     </div>
   )
 }
