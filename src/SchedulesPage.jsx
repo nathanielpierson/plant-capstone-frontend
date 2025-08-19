@@ -40,11 +40,13 @@ export function SchedulesPage() {
   };
 
   //button to water plants is pressed, this code is run. No data input from user, the put action on the backend is what changes the data.
-  const handleWatered = (schedule) => {
-    axios.put(`/schedules/${schedule.id}/water.json`);
-    console.log("handleWatered run");
-    handleIndex();
-  };
+const handleWatered = (schedule) => {
+  axios.put(`/schedules/${schedule.id}/water.json`).then((response) => {
+    setSchedules((prev) =>
+      prev.map((s) => (s.id === schedule.id ? response.data : s))
+    );
+  });
+};
 
   const handleDestroy = (schedule) => {
     axios.delete(`/schedules/${schedule.id}.json`).then(() => {

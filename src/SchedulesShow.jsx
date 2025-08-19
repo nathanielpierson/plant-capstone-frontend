@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
   useEffect(onUpdate, []);
   const sortedSchedules = schedules.toSorted((a, b) => a.id - b.id);
+  const [waterIsVisible, setWaterIsVisible] = useState(true);
+  const handleWaterPressed = (schedule) => {
+    setWaterIsVisible(false);
+    onWatered(schedule);
+    console.log("button falsified");
+  }
   return (
     <div>
       <h1>all of your schedules</h1>
@@ -41,12 +47,12 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
             {schedule.plant.days_to_water * 24 - schedule.time_changed} hours
           </p>
           <div>
-            {schedule.plant.days_to_water * 24 - schedule.time_changed > 0 && schedule.growth_status != 0 ? (
+            {schedule.plant.days_to_water * 24 - schedule.time_changed > 0 && schedule.growth_status != 0 || waterIsVisible == false? (
               <p className="waterless">come back later to water your plant!</p>
             ) : (
               <div>
               <div>
-                <button onClick={() => onWatered(schedule)}>water plant</button>
+                <button onClick={() => handleWaterPressed(schedule)}>water plant</button>
               </div>
               </div>
             )}
