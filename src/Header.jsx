@@ -53,7 +53,12 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/schedules">
-                  Your Plant Schedule
+                  Your plant schedules
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/plants">
+                  All plants
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -64,25 +69,15 @@ export function Header() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Other options
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="profile">
-                      Your Profile
-                    </a>
-                  </li>
-                <li className="nav-item">
-                  <a className="dropdown-item" href="https://cdn.triforcewiki.com/thumb/d/d5/Link_TLoZ_artwork.png/1200px-Link_TLoZ_artwork.png">
-                  Link
-                  </a>
-                </li>
                 <li>
                   <a className="dropdown-divider"></a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/plants">
-                    Plants
+                  <a className="dropdown-item" href="/about">
+                    About the app
                   </a>
                 </li>
                 <li>

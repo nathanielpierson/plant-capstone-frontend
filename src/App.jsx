@@ -10,6 +10,7 @@ import { LoginPage } from "./LoginPage";
 import { LogoutPage } from "./LogoutPage";
 import { SchedulesPage } from "./SchedulesPage";
 import { HomePage } from "./HomePage";
+import { AboutPage } from "./AboutPage"
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <UsersShow />
+      },
+      {
+        path: "/about",
+        element: <AboutPage />
       }
     ],
   },
