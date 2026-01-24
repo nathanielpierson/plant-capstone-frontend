@@ -1,4 +1,4 @@
-Plant application frontend; created by Nathaniel Pierson (NOTE: [backend api repo](https://github.com/nathanielpierson/plant-capstone-app) has full explanation of app)
-Created as the capstone project for my fullstack certificate from Actualize coding bootcamp.
-Inspired by video games I play with a farming element, such as Stardew Valley and Old School Runescape.
-When you make a schedule, it will tell you how long you need to wait before you can next water a plant. When you plant the plant initially, you will also be able to water it to put it in the first growth cycle. Once the plant reaches it's specific growth requirement, it is no longer listed on your list of watering schedules.
+This is the frontend for Saladbar: The Plant Growing App. Please note that the [backend api repo](https://github.com/nathanielpierson/plant-capstone-app) has full explanation of app.
+This was created as the capstone project for my fullstack certificate from Actualize coding bootcamp and is maintained as a side project I aim to keep developing.
+It is inspired by video games I play with a farming element, such as Stardew Valley and Palia.
+When you make a schedule, the app will tell you how long you need to wait before you can next water a plant. When you first plant a seed, you will also be able to water it, which will put the plant in its first growth cycle. Once the plant reaches its specific growth requirement, it is no longer listed on your list of watering schedules. You can view your profile to see how many of each plant you have currently growing, and how many you have finished.
