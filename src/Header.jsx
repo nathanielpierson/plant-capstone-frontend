@@ -20,17 +20,20 @@ export function Header() {
             {localStorage.jwt ? (
               <a href="/profile" className="profile-image-link">
                 <img
-                  src={userImage}
+                  src={userImage || "/images/default-plant-man.png"}
                   width="45"
                   height="45"
                   alt="User Profile"
                   className="profile-image"
+                  onError={(e) => {
+                    e.target.src = "/images/default-plant-man.png";
+                  }}
                 />
               </a>
             ) : null}
             <a className="navbar-brand" href="/">
               <span className="brand-icon">🌱</span>
-              <span className="brand-text">Saladbar: The Plant Care App</span>
+              <span className="brand-text">Saladbar: The Plant Growing App</span>
             </a>
           </div>
           <button
