@@ -14,27 +14,27 @@ export function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg custom-navbar">
         <div className="container-fluid">
-      { localStorage.jwt ? 
-        <a href="/profile">
-          <img
-            src={userImage}
-            width="40"
-            height="40"
-            alt="User Profile"
-            className="rounded-circle"
-            style={{ cursor: "pointer" }}
-            />
-        </a> : <a>
-          h
-        </a>
-        }
-          <a className="navbar-brand" href="#">
-          &nbsp; Saladbar: The Plant Care App
-          </a>
+          <div className="navbar-brand-container">
+            {localStorage.jwt ? (
+              <a href="/profile" className="profile-image-link">
+                <img
+                  src={userImage}
+                  width="45"
+                  height="45"
+                  alt="User Profile"
+                  className="profile-image"
+                />
+              </a>
+            ) : null}
+            <a className="navbar-brand" href="/">
+              <span className="brand-icon">🌱</span>
+              <span className="brand-text">Saladbar: The Plant Care App</span>
+            </a>
+          </div>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler custom-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -45,19 +45,19 @@ export function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link" aria-current="page" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/schedules">
-                  Your plant schedules
+                <a className="nav-link" aria-current="page" href="/schedules">
+                  {userName}'s watering schedules
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/plants">
+                <a className="nav-link" aria-current="page" href="/plants">
                   All plants
                 </a>
               </li>
@@ -69,34 +69,43 @@ export function Header() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Other options
+                  More
                 </a>
-                <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-divider"></a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/about">
-                    About the app
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-divider"></a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="/login">
-                    Log in
-                  </a>
-                </li>
+                <ul className="dropdown-menu custom-dropdown">
+                  <li>
+                    <a className="dropdown-item" href="/about">
+                      About the app
+                    </a>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/login">
+                      Log in
+                    </a>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="/profile">
+                      Add or change profile picture
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <p>
-        {localStorage.jwt ? <p> Hello {userName}! </p> : <p> "Hello user! Either log in, or create an account to see your plants!" </p>}
-      </p>
+      <div className="welcome-message">
+        {localStorage.jwt ? (
+          <p>Hello {userName}! 🌿</p>
+        ) : (
+          <p>Hello user! Either log in, or create an account to see your plants! 🌱</p>
+        )}
+      </div>
     </div>
   );
 }
