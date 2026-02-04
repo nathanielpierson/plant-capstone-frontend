@@ -40,16 +40,16 @@ export function LoginPage() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input name="email" type="email" />
+      <form onSubmit={handleSubmit} className="auth-form">
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input id="email" name="email" type="email" />
         </div>
-        <div>
-          Password: &nbsp;&nbsp;
-          <input name="password" type="password" />
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
+          <input id="password" name="password" type="password" />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="auth-button">Login</button>
       </form>
     </div>
   );

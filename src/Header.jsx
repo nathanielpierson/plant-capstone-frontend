@@ -56,7 +56,13 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="/schedules">
+                {localStorage.jwt ? ( <p>
                   {userName}'s watering schedules
+                </p>
+                ) : ( <p>
+                Log in to see your watering schedule
+                  </p>
+                )}
                 </a>
               </li>
               <li className="nav-item">

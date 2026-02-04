@@ -29,24 +29,24 @@ export function SignupPage() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input name="name" type="text" />
+      <form onSubmit={handleSubmit} className="auth-form">
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input id="name" name="name" type="text" />
         </div>
-        <div>
-          Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input name="email" type="email" />
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input id="email" name="email" type="email" />
         </div>
-        <div>
-          Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input name="password" type="password" />
+        <div className="form-group">
+          <label htmlFor="password">Password:</label>
+          <input id="password" name="password" type="password" />
         </div>
-        <div>
-          Confirm password:{" "}
-          <input name="password_confirmation" type="password" />
+        <div className="form-group">
+          <label htmlFor="password_confirmation">Confirm password:</label>
+          <input id="password_confirmation" name="password_confirmation" type="password" />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className="auth-button">Signup</button>
       </form>
       </div>
   );
