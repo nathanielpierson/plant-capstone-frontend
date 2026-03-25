@@ -6,7 +6,6 @@ export function PlantCount() {
   const handleIndex = () => {
     axios.get("/plant_counts.json").then((response) => {
       setPlantCounts(response.data);
-      console.log(response.data);
     })
   };
   useEffect(handleIndex, []);
@@ -26,7 +25,6 @@ export function PlantCount() {
     setLoading(true);
     setError(null);
     try {
-      // Send whatever payload your endpoint expects. {} is fine if it doesn't need one.
       const res = await axios.put(
         "/plant_counts/all",
         {}

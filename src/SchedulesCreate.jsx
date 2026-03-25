@@ -9,7 +9,6 @@ export function SchedulesCreate({ onCreate }) {
     });
   }
   const handleSubmit = (event) => {
-    console.log("handleSubmit");
     event.preventDefault();
     const form = event.target;
     const params = new FormData(form);

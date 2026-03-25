@@ -5,7 +5,6 @@ export function handleUserUpdate( params,
   {
   let successResponse;
   
-  // Check if params is FormData (file upload) or regular object (URL)
   const isFormData = params instanceof FormData;
   
   const config = isFormData 
@@ -23,12 +22,6 @@ export function handleUserUpdate( params,
           successCallback();
         }
       }
-    }).catch((error) => {
-      console.log("Error updating user:", error);
-      if (error.response) {
-        console.log("Response data:", error.response.data);
-        console.log("Response status:", error.response.status);
-      }
-    })
+    }).catch(() => {})
     return successResponse;
 }

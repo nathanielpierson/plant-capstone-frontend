@@ -8,7 +8,6 @@ export function SchedulesShow({ schedules, onWatered, onDestroy, onUpdate }) {
   const handleWaterPressed = (schedule) => {
     setWaterIsVisible(false);
     onWatered(schedule);
-    console.log("button falsified");
   }
   return (
     <div>

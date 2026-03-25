@@ -18,7 +18,6 @@ export function UsersUpdate({onUpdate}) {
     const file = event.target.files[0];
     if (file) {
       setSelectedFile(file);
-      // Create preview
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreview(reader.result);
@@ -38,7 +37,6 @@ export function UsersUpdate({onUpdate}) {
     const form = event.target;
     
     if (selectedFile) {
-      // File upload using FormData
       const formData = new FormData();
       formData.append('image', selectedFile);
       const successCallback = () => {
@@ -48,7 +46,6 @@ export function UsersUpdate({onUpdate}) {
       };
       onUpdate(formData, successCallback);
     } else if (imageUrl) {
-      // URL upload (backward compatibility)
       const params = {
         image_url: imageUrl
       };
@@ -56,7 +53,6 @@ export function UsersUpdate({onUpdate}) {
       onUpdate(params, successCallback);
     }
     
-    // Small delay to allow upload to complete before redirect
     setTimeout(() => {
       window.location.href = "/profile";
     }, 500);

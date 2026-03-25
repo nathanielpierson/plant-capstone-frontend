@@ -11,9 +11,6 @@ export function PlantsPage() {
     });
   };
   useEffect(handleIndex, []);
-  const handleShow = (plant) => {
-    console.log("handleShow", plant);
-  };
   if (localStorage.jwt) {
     return (
       <div>

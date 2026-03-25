@@ -10,13 +10,11 @@ export function SignupPage() {
     const params = new FormData(event.target);
     axios
       .post("/users.json", params)
-      .then((response) => {
-        console.log(response.data);
+      .then(() => {
         event.target.reset();
         window.location.href = "/";
       })
       .catch((error) => {
-        console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
       });
   };

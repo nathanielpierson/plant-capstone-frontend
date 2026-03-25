@@ -16,19 +16,15 @@ export function LoginPage() {
     axios
       .post("/sessions.json", params)
       .then((response) => {
-        console.log(response.data);
-        console.log(params);
         axios.defaults.headers.common["Authorization"] =
           "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
         window.location.href = "/plants";
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         setErrors(["Invalid email or password"]);
       });
-    console.log(params);
   };
 
   return (
