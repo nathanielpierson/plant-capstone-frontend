@@ -3,7 +3,7 @@ export function Footer() {
     <div>
       <br></br>
       <br></br>
-      <p>copyright Nathaniel Plantson 2025</p>;
+      <p>copyright Nathaniel Pierson ©2025-2026</p>;
     </div>
   );
 }
